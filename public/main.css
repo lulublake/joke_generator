@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    height: 900px;
+    height: 100vh;
     background-color: #0f1709;
     display: flex;
     align-items: center;
@@ -77,7 +77,6 @@ p{
 @media(min-width: 640px){
 body{
     font-size: 16px;
-    height: 930px;
 }
 
 .card{
