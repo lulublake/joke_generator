@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Sour+Gummy:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/main.css">
+    <title>Joke Generator</title>
+</head>
+<body>
+    <div class="card">
+        <% if(locals.category && locals.id){ %>
+            <p><%= category %> Jokes #<%= id %></p>
+        <% }else{ %>
+            <p>Jokes Generator</p>  
+        <% } %>
+
+        <div class="text">
+            <% if(locals.setup && locals.delivery){ %>
+                <h3><%= setup %></h3>
+                <h1><%= delivery %> 🤪</h1>
+            <% }else{ %>
+                <h3>Click the generate button to get a setup joke-content...</h3>
+                <h1>And the punchline will appear here 🤪</h1>  
+            <% } %>
+               
+        </div>
+        <div class="dice">
+            <hr>
+            <i class="fa-solid fa-dice"></i>        
+            <hr>
+        </div>
+        <form action="/generate" method="POST">
+            <button type="submit">Generate <i class="fa-solid fa-dice"></i></button>
+        </form>
+    </div>
+</body>
+</html>
